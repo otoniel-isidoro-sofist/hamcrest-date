@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8' />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+    <meta name="description" content="Hamcrest-date : Date matchers for the Java Hamcrest library" />
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>Hamcrest-date</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/modularit/hamcrest-date">View on GitHub</a>
+
+          <h1 id="project_title">Hamcrest-date</h1>
+          <h2 id="project_tagline">Date matchers for the Java Hamcrest library</h2>
+
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/modularit/hamcrest-date/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/modularit/hamcrest-date/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h3>About</h3>
+
+<p>Hamcrest-date provides a selection of matchers compatible with <a href="https://github.com/hamcrest" class="user-mention">@hamcrest</a> for matching dates with test conditions. Some usage examples are below;</p>
+
+<h3>Examples</h3>
+
+<p>To test if a date is within 10 minutes of now then use:</p>
+
+<div class="highlight"><pre><span class="n">MatcherAssert</span><span class="o">.</span><span class="na">assertThat</span><span class="o">(</span><span class="n">myDate</span><span class="o">,</span> <span class="n">DateMatchers</span><span class="o">.</span><span class="na">within</span><span class="o">(</span><span class="mi">10</span><span class="o">,</span> <span class="n">TimeUnit</span><span class="o">.</span><span class="na">MINUTES</span><span class="o">,</span> <span class="k">new</span> <span class="n">Date</span><span class="o">()));</span>
+</pre></div>
+
+<p>To test if a date is the same date as now then user:</p>
+
+<div class="highlight"><pre><span class="n">MatcherAssert</span><span class="o">.</span><span class="na">assertThat</span><span class="o">(</span><span class="n">myDate</span><span class="o">,</span>  <span class="n">DateMatchers</span><span class="o">.</span><span class="na">sameInstant</span><span class="o">(</span><span class="k">new</span> <span class="n">Date</span><span class="o">()));</span>
+</pre></div>
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">Hamcrest-date maintained by <a href="https://github.com/modularit">modularit</a></p>
+        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+
+  </body>
+</html>
