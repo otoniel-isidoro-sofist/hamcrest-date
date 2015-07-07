@@ -32,6 +32,9 @@ public class IsWithin extends TypeSafeDiagnosingMatcher<Date> {
 
 	@Override
 	protected boolean matchesSafely(final Date actual, final Description mismatchDesc) {
+		if((actual==null) || (expected==null)){
+			return actual == expected;
+		}
 		long differenceInMillis = Math.abs(expected.getTime() - actual.getTime());
 		if (differenceInMillis > expectedDifferenceInMillis) {
 			mismatchDesc.appendText("date is ").appendValue(formatDateWithMillis(actual));
