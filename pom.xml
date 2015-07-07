@@ -1,9 +1,9 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>org.exparity</groupId>
+	<groupId>br.com.sofist</groupId>
 	<artifactId>hamcrest-date</artifactId>
-	<version>1.1.1-SNAPSHOT</version>
+	<version>1.1.1</version>
 
 	<name>Hamcrest Date</name>
 	<url>https://github.com/exparity/hamcrest-date</url>
@@ -38,6 +38,21 @@
 			</roles>
 		</developer>
 	</developers>
+
+
+	<distributionManagement>
+		<repository>
+			<id>nexus-release</id>
+			<name>Nexus Release</name>
+			<url>http://nexus.it.movile.com:8081/nexus/content/repositories/releases</url>
+		</repository>
+		<snapshotRepository>
+			<id>nexus-snapshot</id>
+			<name>Nexus Snapshots</name>
+			<url>http://nexus.it.movile.com:8081/nexus/content/repositories/snapshots</url>
+		</snapshotRepository>
+	</distributionManagement>
+
 
 	<dependencies>
 		<dependency>

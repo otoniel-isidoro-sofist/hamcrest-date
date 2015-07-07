@@ -1,15 +1,17 @@
 
 package org.exparity.hamcrest.date;
 
-import static java.util.Calendar.getInstance;
-import static org.exparity.hamcrest.date.DateFormatter.formatDateWithMillis;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.concurrent.TimeUnit;
 import org.hamcrest.Description;
 import org.hamcrest.Factory;
 import org.hamcrest.Matcher;
 import org.hamcrest.TypeSafeDiagnosingMatcher;
+
+import java.util.Calendar;
+import java.util.Date;
+import java.util.concurrent.TimeUnit;
+
+import static java.util.Calendar.getInstance;
+import static org.exparity.hamcrest.date.DateFormatter.formatDateWithMillis;
 
 /**
  * A matcher that tests that the examined date is within a defined period of the reference date
@@ -32,9 +34,6 @@ public class IsWithin extends TypeSafeDiagnosingMatcher<Date> {
 
 	@Override
 	protected boolean matchesSafely(final Date actual, final Description mismatchDesc) {
-		if((actual==null) || (expected==null)){
-			return actual == expected;
-		}
 		long differenceInMillis = Math.abs(expected.getTime() - actual.getTime());
 		if (differenceInMillis > expectedDifferenceInMillis) {
 			mismatchDesc.appendText("date is ").appendValue(formatDateWithMillis(actual));
@@ -43,6 +42,8 @@ public class IsWithin extends TypeSafeDiagnosingMatcher<Date> {
 			return true;
 		}
 	}
+
+
 
 	public void describeTo(final Description description) {
 		description.appendText("the date is within " + period + " " + abbreviatedUnit(unit) + " of ").appendValue(formatDateWithMillis(expected));
